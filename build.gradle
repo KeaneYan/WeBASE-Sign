@@ -81,8 +81,12 @@ List jackson = [
     "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jackson_version",
 ]
 
+List protobuf_java = [
+        'com.google.protobuf:protobuf-java:3.16.3'
+]
+
 dependencies {
-    compile springboot,swagger,mysql,log4j,jaxb,jackson
+    compile springboot,swagger,mysql,log4j,jaxb,jackson,protobuf_java
     compile ('org.fisco-bcos.java-sdk:fisco-bcos-java-sdk:2.9.2') {
         // 不需要连接节点，因此去除
         exclude group: "org.fisco-bcos", module: 'netty-sm-ssl-context'
